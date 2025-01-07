@@ -1,11 +1,9 @@
--- Create Authors Table
 CREATE TABLE Authors (
     author_id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     birth_year INT
 );
 
--- Create Books Table
 CREATE TABLE Books (
     book_id INT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
@@ -15,14 +13,12 @@ CREATE TABLE Books (
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
--- Insert sample authors
 INSERT INTO Authors (author_id, name, birth_year) 
 VALUES 
 (1, 'George Orwell', 1903),
 (2, 'J.K. Rowling', 1965),
 (3, 'Harper Lee', 1926);
 
--- Insert sample books
 INSERT INTO Books (book_id, title, author_id, publication_year, genre) 
 VALUES 
 (1, '1984', 1, 1949, 'Dystopian'),
